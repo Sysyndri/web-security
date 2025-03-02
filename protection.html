@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Методы защиты</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+  <link rel="stylesheet" href="/style/style.css">
+  <style>
+    .ui.sidebar {
+      background: #f5f5f5;
+      padding: 20px;
+    }
+    .ui.footer {
+      margin-top: 50px;
+      padding: 20px 0;
+      background: #1b1c1d;
+      color: white;
+      text-align: center;
+    }
+    .ui.table {
+      margin-top: 20px;
+    }
+    .video-container {
+      margin-top: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="ui top fixed menu">
+      <div class="ui container">
+        <a class="item" href="index.html">Главная</a>
+        <a class="item" href="threats.html">Угрозы</a>
+        <a class="active item" href="protection.html">Защита</a>
+        <a class="item" href="tools.html">Инструменты</a>
+        <a class="item" href="best-practices.html">Лучшие практики</a>
+        <a class="item" href="contact.html">Контакты</a>
+      </div>
+    </div>
+  </header> 
+
+  <main>
+
+    <div class="ui container" style="margin-top: 80px;">
+      <div class="ui grid">
+
+        <div class="four wide column">
+          <div class="ui vertical menu">
+            <a class="item" href="index.html">Главная</a>
+            <a class="item" href="threats.html">Угрозы</a>
+            <a class="active item" href="protection.html">Защита</a>
+            <a class="item" href="tools.html">Инструменты</a>
+            <a class="item" href="best-practices.html">Лучшие практики</a>
+            <a class="item" href="contact.html">Контакты</a>
+          </div>
+          <div class="four wide column">
+              <img class="ui medium rounded image image-side" src="/img/poster.jpg">
+          </div>
+        </div>
+
+        <div class="twelve wide column">
+          <h1 class="ui header">Методы защиты</h1>
+          <p>Используйте следующие методы для защиты ваших веб-ресурсов:</p>
+
+          <p>Для защиты веб-ресурсов важно использовать комплексный подход. Вот основные методы:</p>
+
+          <table class="ui celled table">
+            <thead>
+              <tr>
+                <th>Метод</th>
+                <th>Описание</th>
+                <th>Пример</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>HTTPS</td>
+                <td>Шифрование данных.</td>
+                <td>Использование SSL/TLS.</td>
+              </tr>
+              <tr>
+                <td>Валидация данных</td>
+                <td>Проверка входных данных.</td>
+                <td>Фильтрация SQL-инъекций.</td>
+              </tr>
+              <tr>
+                <td>Регулярные обновления</td>
+                <td>Обновление ПО и библиотек.</td>
+                <td>Установка последних версий.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <section class="section">
+            <h2 class="title-h2">Анализ существующих методов защиты</h2>
+            <p class="text-p">С учетом разнообразия средств, используемых злоумышленниками для извлечения 
+                конфиденциальной информации из веб-приложений или нарушения их нормального функционирования, 
+                существует обширный набор методов и техник, предназначенных для обеспечения безопасности и 
+                стабильности веб-приложений. Применение правильных мер защиты является важным аспектом 
+                разработки и обслуживания приложений в цифровой среде, где угрозы кибербезопасности постоянно эволюционируют.
+            </p>
+        </section>
+        <section class="section injection-sql">
+            <h2 class="title-h2">Инъекции SQL</h2>
+            <p class="text-p">Существуют несколько популярных методов защиты от инъекций SQL:</p>
+            <ul class="list injection-list">
+                <li class="injection-sql-li">
+                    <p>
+                        <b>Использование параметризованных запросов:</b> Данный метод предпочтителен, когда при выполнили SQL-запроса используются параметры, 
+                        которые передаются отдельно от запроса.
+                    </p>
+                    <p class="text-p"><b>Продемонстрируем на примере</b></p>
+                    <p class="text-p">Предположим, у нас есть сервис, который осуществляет запрос к запрос к таблице <span class="outline">Users</span>. 
+                        Вместо использования прямого запроса к таблице, можно использовать параметризованный:</p>
+                    
+                    <p class="text-p">
+                        <code class="code">
+                            <span class="py-color-blue">cursor</span>.execute(<span class="py-color-green">"SELECT * FROM users WHERE user_id=?"</span>, (<span class="py-color-blue">user_id</span>,))
+                        </code>
+                    </p>
+                    <p class="text-p">Здесь был использован параметризованный запрос с символом <span class="outline">?</span>, чтобы передать значение <span class="outline">user_id</span> отдельно от запроса SQL. 
+                        Это позволяет базе данных безопасно обрабатывать входные данные и избегать выполнения внедренного SQL-кода. Если пользователь введет идентификатор, 
+                        содержащий SQL-код (например,<span class="outline">"1; DROP TABLE users;"</span>), то база данных обработает его как часть данных, а не как часть запроса, 
+                        и таким образом предотвратит выполнение опасной операции удаления таблицы.</p>
+                </li>
+                <li class="injection-sql-li">
+                    <p>
+                        <b>Фильтрация входных данных:</b> Валидация данных с использованием списков.
+                    </p>
+                    <p class="text-p">
+                        <b>Белый список (англ. Whitelisting):</b> Этот подход заключается в том, что разрешаются только определенные символы или шаблоны данных. 
+                        Например, если ожидается ввод числа, то фильтрация может разрешать только цифры. Это позволяет уменьшить возможность внедрения вредоносного кода или неожиданных символов.
+                    </p>
+                    <p class="text-p">
+                        <b>Черный список (англ. Blacklisting):</b> В этом случае определенные символы или шаблоны данных запрещаются. 
+                        Например, запрещается использование специальных символов, таких как кавычки или знаки разделения, которые могут быть использованы для инъекций SQL.
+                    </p>
+                </li>
+                <li class="injection-sql-li">
+                    <p>
+                        <b>Использование ORM (англ. Object-Relation Mapping):</b> Каждый язык программирования предоставляет ORM-библиотеки, которые могут предоставить уровень 
+                        абстракции между приложением и базой данных, автоматически генерируя безопасные SQL-запросы.
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section class="section xss">
+            <h2 class="title-h2">XSS</h2>
+            <p class="text-p">Для XSS распространены следующие методы:</p>
+            <ul class="list xss-list">
+                <li class="xss-li">
+                    <p class="text-p">
+                        <b>Экранирование ввода данных:</b> Данный метод заключается в том, что все входные данные, поступающие от пользователей, 
+                        должны быть экранированы перед выводом на веб-страницу. Экранирование удаляет специальные символы из входных данных, 
+                        чтобы предотвратить их интерпретацию как HTML или JavaScript кода.
+                    </p>
+                </li>
+                <li class="xss-li">
+                    <p class="text-p">
+                        <b>Установка заголовков безопасности HTTP:</b> Бэкенд-сервер может установить заголовки безопасности HTTP, 
+                        такие как Content-Security-Policy (CSP) [9] или X-XSS-Protection [10], которые помогают предотвратить XSS атаки на стороне клиента.
+                        <p class="text-p">Пример заголовка CSP:</p>
+                        <code class="code">
+                            <span class="code-html-color">Content-Security-Policy</span><span class="py-color-blue">: default-src </span><span class="py-color-green">'self'</span>;<br>
+                            <span class="code-html-color">script-src </span><span class="py-color-green">'self'</span> <span class="code-html-color">https://example</span><span class="code-html-doctype">.example.com</span>;
+                        </code>
+                        <p class="text-p">Пример заголовка X-XSS-Protection:</p>
+                        <code class="code">
+                            <span class="code-html-color">X-XSS-Protection:</span> <span class="code-html-doctype">1</span>; <span class="code-html-color">mode=block</span>
+                        </code>
+                    </p>
+                </li>
+                <li class="xss-li">
+                    <p class="text-p">
+                        <b>Валидация входных данных:</b> Подобно валидации на стороне клиента, бэкенд-сервер должен также проводить строгую валидацию и фильтрацию всех входных данных, получаемых от пользователя. 
+                        Это поможет предотвратить внедрение вредоносного кода в систему еще на ранних этапах обработки данных.
+                    </p>
+                </li>
+                <li class="xss-li">
+                    <p class="text-p">
+                        <b>Использование безопасных API и библиотек:</b> При работе с данными, передаваемыми между клиентом и сервером, 
+                        необходимо использовать безопасные API и библиотеки, которые предотвращают внедрение вредоносного кода.
+                    </p>
+                </li>
+            </uk>
+        </section>
+      <section class="section csrf">
+          <h2 class="title-h2">CSRF</h2>
+          <p class="text-p">Самые популярные методы для предотвращения CSRF атаки:</p> 
+          <ul class="list csrf-list">
+              <li class="csrf-li">
+                  <p class="text-p">
+                      <b>Использование CSRF-токенов:</b> Этот метод заключается в генерации уникального токена 
+                      для каждой сессии пользователя и включении этого токена в каждый запрос, который изменяет состояние сервера. Сервер проверяет наличие и 
+                      корректность этого токена при получении запроса. Это эффективно предотвращает атаки CSRF, так как злоумышленник не сможет подделать 
+                      или украсть этот уникальный токен.
+                  </p>
+              </li>
+              <li class="csrf-li">
+                  <p class="text-p">
+                      <b>SameSite Cookies:</b> Это новая функциональность, представленная в стандарте 
+                      HTTP Cookies, которая позволяет сайтам указывать, в каком контексте (домене) должны использоваться их куки.
+                  </p>
+                  <p class="text-p">Спецификация SameSite Cookie предоставляет три варианта значения для этой функциональности:</p>
+                  <p class="text-p">
+                      <b>SameSite=None:</b> Куки с этим значением могут быть отправлены вместе с запросами, инициированными из любого сайта (кросс-сайтовые запросы),
+                      но только если они инициированы с помощью безопасных контекстов (HTTPS). Это позволяет кукам использоваться в составе запросов AJAX между доменами.
+                  </p>
+                  <p class="text-p">
+                      <b>SameSite=Strict:</b> Куки с этим значением не будут отправляться вместе с кросс-сайтовыми запросами. 
+                      Они будут отправляться только в том случае, если запросы инициированы с того же сайта, с которого были установлены куки.
+                  </p>
+                  <p class="text-p">
+                      <b>SameSite=Lax:</b> Похож на Strict, но с небольшими исключениями. Куки SameSite=Lax будут отправлены с кросс-сайтовыми запросами, 
+                      если они инициированы с помощью безопасных методов (например, ссылки с GET-параметрами), но не с другими запросами, такими как POST.
+                  </p>
+              </li>
+              <li class="csrf-li">
+                  <p class="text-p">
+                      <b>Проверка Referer заголовка:</b> Сервер может проверять заголовок Referer для каждого запроса, чтобы убедиться, 
+                      что запрос происходит с того же источника, откуда была получена страница.
+                  </p>
+              </li>
+              <li class="csrf-li">
+                  <p class="text-p">
+                      <b>Двойная проверка записи (англ. Double Submit Cookie)</b> При этом методе вместо одного токена CSRF используются два токена: 
+                      один в куках и один в форме запроса. При получении запроса сервер проверяет, совпадают ли эти токены.
+                  </p>
+              </li>
+          </ul>
+          
+      </section>
+      <section class="section over-buffer">
+        <h2 class="title-h2">Переполнение буфера</h2>
+        <p class="text-p">Для защиты от атак, связанных с переполнением буфера, существует несколько методов:</p>
+        <ul class="list over-buffer-list">
+            <li class="over-bufer-li">
+                <p class="text-p">
+                    <b>Проверка длины данных:</b> Один из подходов к предотвращению переполнения буфера - 
+                    это проверка длины входных данных перед копированием или записью в буфер. Путем проверки, 
+                    что входные данные не превышают максимально допустимую длину, программное обеспечение может 
+                    избежать записи данных за пределами выделенной памяти.
+                </p>
+            </li>
+            <li class="over-bufer-li">
+                <p class="text-p">
+                    <b>Использование защитных механизмов операционной системы:</b> Некоторые операционные системы 
+                    предоставляют защитные механизмы, такие как ASLR (Address Space Layout Randomization) и DEP 
+                    (Data Execution Prevention), которые могут предотвращать или затруднять успешные атаки, связанные с переполнением буфера.
+                </p>
+            </li>
+            <li class="over-bufer-li">
+                <p class="text-p">
+                    <b>Использование безопасных функций:</b> Множество языков программирование предоставляют безопасные функции, 
+                    которые предотвращают переполнение буфера, так как они требуют указания максимальной длины буфера.
+                </p>
+            </li>
+        </ul>
+        
+    </section>
+
+          <div class="video-container">
+            <h3>Видео: Как защитить веб-ресурсы</h3>
+            <iframe width="720" height="405" src="https://rutube.ru/play/embed/a3bba84f3cade5b8ddb66e4b717e43dc/" frameBorder="0" allow="clipboard-write" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>        </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ui container" style="margin-top: 50px;">
+      <div class="ui pagination menu">
+        <a class="item" href="index.html">1</a>
+        <a class="item" href="threats.html">2</a>
+        <a class="active item" href="protection.html">3</a>
+        <a class="item" href="tools.html">4</a>
+        <a class="item" href="best-practices.html">5</a>
+        <a class="item" href="contact.html">6</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="ui footer">
+      <div class="ui container">
+        <p>&copy; 2023 Безопасность веб-ресурсов. Все права защищены.</p>
+      </div>
+    </div>
+  </footer> 
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+</body>
+</html>

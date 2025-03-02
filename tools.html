@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Инструменты</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+  <style>
+    .ui.sidebar {
+      background: #f5f5f5;
+      padding: 20px;
+    }
+    .ui.footer {
+      margin-top: 50px;
+      padding: 20px 0;
+      background: #1b1c1d;
+      color: white;
+      text-align: center;
+    }
+    .ui.table {
+      margin-top: 20px;
+    }
+    .video-container {
+      margin-top: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="ui top fixed menu">
+      <div class="ui container">
+        <a class="item" href="index.html">Главная</a>
+        <a class="item" href="threats.html">Угрозы</a>
+        <a class="item" href="protection.html">Защита</a>
+        <a class="active item" href="tools.html">Инструменты</a>
+        <a class="item" href="best-practices.html">Лучшие практики</a>
+        <a class="item" href="contact.html">Контакты</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="ui container" style="margin-top: 80px;">
+      <div class="ui grid">
+
+        <div class="four wide column">
+          <div class="ui vertical menu">
+            <a class="item" href="index.html">Главная</a>
+            <a class="item" href="threats.html">Угрозы</a>
+            <a class="item" href="protection.html">Защита</a>
+            <a class="active item" href="tools.html">Инструменты</a>
+            <a class="item" href="best-practices.html">Лучшие практики</a>
+            <a class="item" href="contact.html">Контакты</a>
+          </div>
+          <div class="four wide column">
+              <img class="ui medium rounded image image-side" src="/img/poster.jpg">
+          </div>
+        </div>
+
+        <div class="twelve wide column">
+          <h1 class="ui header">Инструменты для безопасности</h1>
+          <p>Вот несколько популярных инструментов для обеспечения безопасности веб-ресурсов:</p>
+
+          <p>Использование специализированных инструментов помогает выявлять уязвимости и защищать веб-приложения от атак. Ниже представлены некоторые из них:</p>
+
+          <table class="ui celled table">
+            <thead>
+              <tr>
+                <th>Инструмент</th>
+                <th>Описание</th>
+                <th>Ссылка</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>OWASP ZAP</td>
+                <td>Инструмент для поиска уязвимостей в веб-приложениях.</td>
+                <td><a href="https://habr.com/ru/companies/first/articles/709586/" target="_blank">Перейти</a></td>
+              </tr>
+              <tr>
+                <td>Burp Suite</td>
+                <td>Комплексный инструмент для тестирования безопасности.</td>
+                <td><a href="https://habr.com/ru/articles/328382/" target="_blank">Перейти</a></td>
+              </tr>
+              <tr>
+                <td>Nmap</td>
+                <td>Сканер сети для обнаружения уязвимостей.</td>
+                <td><a href="https://habr.com/ru/articles/131433/" target="_blank">Перейти</a></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="video-container">
+            <h3>Видео: Как использовать OWASP ZAP</h3>
+            <iframe width="720" height="405" src="https://rutube.ru/play/embed/627df02ad5988209935155a0b667589f/" frameBorder="0" allow="clipboard-write" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>        </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ui container" style="margin-top: 50px;">
+      <div class="ui pagination menu">
+        <a class="item" href="index.html">1</a>
+        <a class="item" href="threats.html">2</a>
+        <a class="item" href="protection.html">3</a>
+        <a class="active item" href="tools.html">4</a>
+        <a class="item" href="best-practices.html">5</a>
+        <a class="item" href="contact.html">6</a>
+      </div>
+    </div>
+  </main>
+    
+  <footer>
+    <div class="ui footer">
+      <div class="ui container">
+        <p>&copy; 2023 Безопасность веб-ресурсов. Все права защищены.</p>
+      </div>
+    </div>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+</body>
+</html>
