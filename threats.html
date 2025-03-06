@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Угрозы</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.css"> 
   <link rel="stylesheet" href="/style/style.css">
   <style>
-    .ui.sidebar {
-      background: #f5f5f5;
-      padding: 20px;
+    .ui.vertical.menu{
+      position: sticky;
+      top: 80px;
     }
     .ui.footer {
       margin-top: 50px;
@@ -54,8 +54,8 @@
             <a class="item" href="best-practices.html">Лучшие практики</a>
             <a class="item" href="contact.html">Контакты</a>
           </div>
-          <div class="four wide column">
-              <img class="ui medium rounded image image-side" src="/img/poster.jpg">
+          <div class="sidebar-img">
+            <img class="ui medium rounded image image-side" src="/img/poster.jpg" >
           </div>
         </div>
 
@@ -187,25 +187,23 @@
                 Форма выглядит следующим образом:</p>
 
 
-  <pre class="scripting-code">
-  <code class="code code-html">
-  <span class="code-html-doctype">&lt;!DOCTYPE html&gt;</span>
-  <span class="code-html-color">&lt;html&gt;</span>
-  <span class="code-html-color">&lt;head&gt;</span>
-  <span class="code-html-color">&lt;title</title>&gt;</span>Auther<span class="code-html-color">&lt;/title&gt;</span>
-  <span class="code-html-color">&lt;/head&gt;</span>
-  <span class="code-html-color">&lt;body&gt;</span>
-  <span class="code-html-color">&lt;h1&gt;</span>Добро пожаловать!<span class="code-html-color">&lt;/h1&gt;</span>
-  <span class="code-html-color">&lt;p&gt;</span>Введите данные для авторизации:<span class="code-html-color">&lt;/p&gt;</span>
-  <span class="code-html-color">&lt;form method</span>=<span class="code-html-green">"post"</span><span class="code-html-color">&gt;</span>
-  <span class="code-html-color">&lt;input type</span>=<span class="code-html-green">"text"</span><span class="code-html-color"> name</span>=<span class="code-html-green">"username"</span><span class="code-html-color">&gt;</span>
-  <span class="code-html-color">&lt;input type</span>=<span class="code-html-green">"password"</span><span class="code-html-color"> name</span>=<span class="code-html-green">"password"</span><span class="code-html-color">&gt;</span>
-  <span class="code-html-color">&lt;input type</span>=<span class="code-html-green">"submit"</span><span class="code-html-color"> value</span>=<span class="code-html-green">"Отправить"</span><span class="code-html-color">&gt;</span>
-  <span class="code-html-color">&lt;/form&gt;</span>
-  <span class="code-html-color">&lt;/body&gt;</span>
-  <span class="code-html-color">&lt;/html&gt;</span>
-  </code>  
-  </pre>
+            <code class="code code-html code-width">
+              <span class="code-html-doctype">&lt;!DOCTYPE html&gt;</span><br>
+              <span class="code-html-color">&lt;html&gt;</span><br>
+              <span class="code-html-color">&lt;head&gt;</span><br>
+              <span class="code-html-color indent">&lt;title</title>&gt;</span>Auther<span class="code-html-color">&lt;/title&gt;</span><br>
+              <span class="code-html-color">&lt;/head&gt;</span><br>
+              <span class="code-html-color">&lt;body&gt;</span><br>
+              <span class="code-html-color indent">&lt;h1&gt;</span>Добро пожаловать!<span class="code-html-color">&lt;/h1&gt;</span><br>
+              <span class="code-html-color indent">&lt;p&gt;</span>Введите данные для авторизации:<span class="code-html-color">&lt;/p&gt;</span><br>
+              <span class="code-html-color indent">&lt;form method</span>=<span class="code-html-green">"post"</span><span class="code-html-color">&gt;</span><br>
+              <span class="code-html-color indent-2">&lt;input type</span>=<span class="code-html-green">"text"</span><span class="code-html-color"> name</span>=<span class="code-html-green">"username"</span><span class="code-html-color">&gt;</span><br>
+              <span class="code-html-color indent-2">&lt;input type</span>=<span class="code-html-green">"password"</span><span class="code-html-color"> name</span>=<span class="code-html-green">"password"</span><span class="code-html-color">&gt;</span><br>
+              <span class="code-html-color indent-2">&lt;input type</span>=<span class="code-html-green">"submit"</span><span class="code-html-color"> value</span>=<span class="code-html-green">"Отправить"</span><span class="code-html-color">&gt;</span><br>
+              <span class="code-html-color indent">&lt;/form&gt;</span><br>
+              <span class="code-html-color">&lt;/body&gt;</span><br>
+              <span class="code-html-color">&lt;/html&gt;</span><br>
+            </code>  
 
               <p class="text-p">При обработке введенного имени <span class="outline">username</span> на сервере предполагается, что оно будет безопасно 
                   отображено в личном кабинете. Однако, если введенное имя не фильтруется должным образом, злоумышленник может 
@@ -243,44 +241,42 @@
             </ul>
             <p class="text-p"><b>Продемонстрируем на примере</b></p>
             <p class="text-p">Допустим у нас есть интернет магазин - <b>"buyOnline"</b>. На сайте есть возможность изменить свой пароль через форму:</p>
-            <pre class="scripting-code">
-  <code class="code code-html">
-  <span class="code-html-doctype">&lt;!DOCTYPE html&gt;</span>
-  <span class="code-html-color">&lt;html&gt;</span>
-  <span class="code-html-color">&lt;head&gt;</span>
-  <span class="code-html-color">&lt;title</title>&gt;</span>Buy Online - Change Password<span class="code-html-color">&lt;/title&gt;</span>
-  <span class="code-html-color">&lt;/head&gt;</span>
-  <span class="code-html-color">&lt;body&gt;</span>
-  <span class="code-html-color">&lt;h1&gt;</span>Смена пароля<span class="code-html-color">&lt;/h1&gt;</span>
-  <span class="code-html-color">&lt;form method</span>=<span class="code-html-green">"post"</span><span class="code-html-color">&gt;</span>
-  <span class="code-html-color">&lt;label for</span>=<span class="code-html-green">"new_password"</span><span class="code-html-color">&lt;/label&gt;</span>
-  <span class="code-html-color">&lt;input type</span>=<span class="code-html-green">"password"</span><span class="code-html-color"> id</span>=<span class="code-html-green">"new_password"</span><span class="code-html-color"> name</span>=<span class="code-html-green">"new_password"</span><span class="code-html-color">&gt;</span>
-  <span class="code-html-color">&lt;input type</span>=<span class="code-html-green">"submit"</span><span class="code-html-color"> value</span>=<span class="code-html-green">"Сменить пароль"</span><span class="code-html-color">&gt;</span>
-  <span class="code-html-color">&lt;/form&gt;</span>
-  <span class="code-html-color">&lt;/body&gt;</span>
-  <span class="code-html-color">&lt;/html&gt;</span>
-  </code>  
-            </pre>
+            <code class="code code-html code-width">
+              <span class="code-html-doctype">&lt;!DOCTYPE html&gt;</span><br>
+              <span class="code-html-color">&lt;html&gt;</span><br>
+              <span class="code-html-color">&lt;head&gt;</span><br>
+              <span class="code-html-color indent">&lt;title</title>&gt;</span>Buy Online - Change Password<span class="code-html-color">&lt;/title&gt;</span><br>
+              <span class="code-html-color">&lt;/head&gt;</span><br>
+              <span class="code-html-color">&lt;body&gt;</span><br>
+              <span class="code-html-color indent">&lt;h1&gt;</span>Смена пароля<span class="code-html-color">&lt;/h1&gt;</span><br>
+              <span class="code-html-color indent">&lt;form method</span>=<span class="code-html-green">"post"</span><span class="code-html-color">&gt;</span><br>
+              <span class="code-html-color indent-2">&lt;label for</span>=<span class="code-html-green">"new_password"</span><span class="code-html-color">&lt;/label&gt;</span><br>
+              <span class="code-html-color indent-2">&lt;input type</span>=<span class="code-html-green">"password"</span><span class="code-html-color"> id</span>=<span class="code-html-green">"new_password"</span><span class="code-html-color"> name</span>=<span class="code-html-green">"new_password"</span><span class="code-html-color">&gt;</span><br>
+              <span class="code-html-color indent-2">&lt;input type</span>=<span class="code-html-green">"submit"</span><span class="code-html-color"> value</span>=<span class="code-html-green">"Сменить пароль"</span><span class="code-html-color">&gt;</span><br>
+              <span class="code-html-color indent">&lt;/form&gt;</span><br>
+              <span class="code-html-color">&lt;/body&gt;</span><br>
+              <span class="code-html-color">&lt;/html&gt;</span><br>
+            </code>  
             <p class="text-p">Пускай теперь нашелся злоумышленник, который создал вредоносный сайт, который содержит следующий код:</p>
 
-            <pre>
-  <code class="code code-html">
-  <span class="code-html-doctype">&lt;!DOCTYPE html&gt;</span>
-  <span class="code-html-color">&lt;html&gt;</span>
-  <span class="code-html-color">&lt;head&gt;</span>
-  <span class="code-html-color">&lt;title</title>&gt;</span>Вредоносный сайт<span class="code-html-color">&lt;/title&gt;</span>
-  <span class="code-html-color">&lt;/head&gt;</span>
-  <span class="code-html-color">&lt;body&gt;</span>
-  <span class="code-html-color">&lt;h1&gt;</span>Вы выиграли приз! Нажмите кнопку, чтобы получить его:<span class="code-html-color">&lt;/h1&gt;</span>
-  <span class="code-html-color">&lt;form action</span>=<span class="code-html-green">"http://victim-site.com/change_password"</span><span class="code-html-color"> method</span>=<span class="code-html-green">"post"</span><span class="code-html-color">&gt;</span>
-  <span class="code-html-color">&lt;label for</span>=<span class="code-html-green">"new_password"</span><span class="code-html-color">&lt;/label&gt;</span>
-  <span class="code-html-color">&lt;input type</span>=<span class="code-html-green">"hidden"</span><span class="code-html-color"> id</span>=<span class="code-html-green">"new_password"</span><span class="code-html-color"> name</span>=<span class="code-html-green">"hacked_password"</span><span class="code-html-color">&gt;</span>
-  <span class="code-html-color">&lt;input type</span>=<span class="code-html-green">"submit"</span><span class="code-html-color"> value</span>=<span class="code-html-green">"Получить приз"</span><span class="code-html-color">&gt;</span>
-  <span class="code-html-color">&lt;/form&gt;</span>
-  <span class="code-html-color">&lt;/body&gt;</span>
-  <span class="code-html-color">&lt;/html&gt;</span>
-  </code>  
-            </pre>
+
+            <code class="code code-html code-width">
+              <span class="code-html-doctype">&lt;!DOCTYPE html&gt;</span><br>
+              <span class="code-html-color">&lt;html&gt;</span><br>
+              <span class="code-html-color">&lt;head&gt;</span><br>
+              <span class="code-html-color indent">&lt;title</title>&gt;</span>Вредоносный сайт<span class="code-html-color">&lt;/title&gt;</span><br>
+              <span class="code-html-color">&lt;/head&gt;</span><br>
+              <span class="code-html-color">&lt;body&gt;</span><br>
+              <span class="code-html-color indent">&lt;h1&gt;</span>Вы выиграли приз! Нажмите кнопку, чтобы получить его:<span class="code-html-color indent">&lt;/h1&gt;</span><br>
+              <span class="code-html-color indent">&lt;form action</span>=<span class="code-html-green">"http://victim-site.com/change_password"</span><span class="code-html-color"> method</span>=<span class="code-html-green">"post"</span><span class="code-html-color">&gt;</span><br>
+              <span class="code-html-color indent-2">&lt;label for</span>=<span class="code-html-green">"new_password"</span><span class="code-html-color">&lt;/label&gt;</span><br>
+              <span class="code-html-color indent-2">&lt;input type</span>=<span class="code-html-green">"hidden"</span><span class="code-html-color"> id</span>=<span class="code-html-green">"new_password"</span><span class="code-html-color"> name</span>=<span class="code-html-green">"hacked_password"</span><span class="code-html-color">&gt;</span><br>
+              <span class="code-html-color indent-2">&lt;input type</span>=<span class="code-html-green">"submit"</span><span class="code-html-color"> value</span>=<span class="code-html-green">"Получить приз"</span><span class="code-html-color">&gt;</span><br>
+              <span class="code-html-color indent">&lt;/form&gt;</span><br>
+              <span class="code-html-color">&lt;/body&gt;</span><br>
+              <span class="code-html-color">&lt;/html&gt;</span><br>
+            </code>  
+
 
             <p class="text-p">Злоумышленник отправляет жертве ссылку на свой вредоносный сайт, при этом он авторизован на сайте интернет-магазина. 
                 Когда жертва открывает эту страницу, скрипт на вредоносном сайте автоматически отправляет POST-запрос на сайте интернет-магазина с новым паролем, 
@@ -308,25 +304,25 @@
             <p class="text-p"><b>Продемонстрируем на примере</b></p>
             <p class="text-p">У нас есть сервис, который хранит пароли пользователей - <b>"keySaver"</b>. Для хранения он использует хеш-таблицу, но длина символов в ней может быть до 10 byte.</p>
             <p class="text-p">Предположим, у нас есть уязвимая функция, которая копирует введенный пользователем пароль в хеш-таблицу без проверки на длину ввода:</p>
-            <pre>
-              <code class="code-py code">
-  <span class="py-color">function</span> <span class="py-color-blue">savePassword</span>(<span class="py-color-blue">password</span>) {
-  // Создаем хеш-таблицу для хранения паролей
-  // Предположим, что длина хеш-таблицы ограничена 10 байтами
-  <span class="py-color-blue">passwordTable </span>= <span class="py-color-blue">allocateHashTable</span>(<span class="py-color-orange">10</span>); 
 
-  // Копируем введенный пароль в хеш-таблицу
-  <span class="py-color-blue">copyData</span>(<span class="py-color-blue">password</span>, <span class="py-color-blue">passwordTable</span>);
-  }
+              <code class="code-py code code-width">
+                <span class="py-color">function</span> <span class="py-color-blue">savePassword</span>(<span class="py-color-blue">password</span>) {<br>
+                // Создаем хеш-таблицу для хранения паролей<br>
+                // Предположим, что длина хеш-таблицы ограничена 10 байтами<br>
+                <span class="py-color-blue">passwordTable </span>= <span class="py-color-blue">allocateHashTable</span>(<span class="py-color-orange">10</span>); <br>
+
+                // Копируем введенный пароль в хеш-таблицу<br>
+                <span class="py-color-blue">copyData</span>(<span class="py-color-blue">password</span>, <span class="py-color-blue">passwordTable</span>);<br>
+                }<br>
               </code>
-            </pre>
+
             <p class="text-p">Пусть теперь злоумышленник решил провести атаку на эту функцию и ввел пароль длиннее 10 байт, чтобы переполнить буфер:</p>
 
-            <code class="code-py code">
+            <code class="code-py code code-width">
                 // Пароль, длиннее 10 байт, содержащий вредоносный код<br>
                 <span class="py-color-blue">badPayload</span> = <span class="py-color-green">"AAAAAAAAAA"</span> + <span class="py-color-green">"codecode"</span>;<br>
                 // Запускаем функцию для сохранения вредоносного пароля<br>
-                <span class="py-color-blue">savePassword</span>(<span class="py-color-blue">badPayload</span>);
+                <span class="py-color-blue">savePassword</span>(<span class="py-color-blue">badPayload</span>);<br>
             </code>
             <p class="text-p">Здесь и произойдет переполнение буфера. Лишние символы "codecode" перезапишут данные за пределами выделенного пространства памяти в хеш-таблице. 
                 За которым могут последовать сбои в системе.</p>
@@ -355,11 +351,11 @@
   <footer>
     <div class="ui footer">
       <div class="ui container">
-        <p>&copy; 2023 Безопасность веб-ресурсов. Все права защищены.</p>
+        <p>&copy; 2025 Безопасность веб-ресурсов. Все права защищены.</p>
       </div>
     </div>
   </footer>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.js"></script>
 </body>
 </html>

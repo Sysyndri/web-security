@@ -11,6 +11,12 @@ section {
   margin-bottom: 5px;
 }
 
+.sidebar-img {
+  position: sticky;
+  top: 350px;
+  width: 210px !important;
+}
+
 .outline {
   display: inline-block;
   background-color: #f5f5f5;
@@ -29,6 +35,14 @@ section {
   padding: 20px 0 20px 20px;
   background-color: #f5f5f5;
   border-radius: 5px;
+}
+
+.indent {
+  padding-left: 2.5%;
+}
+
+.indent-2 {
+  padding-left: 5%;
 }
 
 .color-comand {
@@ -69,4 +83,98 @@ section {
 
 li {
   margin-bottom: 10px;
+}
+
+.ui.menu.fixed {
+  position: relative;
+}
+
+/* Акардеон */
+
+.accordion {
+  width: 100%;
+  max-width: 800;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+.accordion-item {
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+.accordion-header {
+  background-color: #f1f1f1;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  position: relative;
+}
+
+.accordion-header::after {
+  content: '+';
+  position: absolute;
+  right: 20px;
+  font-size: 20px;
+  transition: transform 0.3s ease;
+}
+
+.accordion-item.active .accordion-header::after {
+  content: '-';
+}
+
+.accordion-content {
+  padding: 0 20px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.accordion-item.active .accordion-content {
+  padding: 20px;
+  max-height: max-content; 
+}
+
+/* Адаптив */
+@media (max-width: 992px) {
+  .four.wide.column{
+    display: none !important;
+  }
+
+  main {
+    width: 100%;
+  }
+
+  .ui.grid {
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .video-container > iframe {
+    width: 125%;
+  }
+
+  .ui.menu > .container {
+    flex-direction: column;
+  }
+
+  .code-sql {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .code-width {
+    width: 125%;
+  }
+
+ .accordion-item {
+    width: 125%
+  }
+
+  .accordion-content > iframe {
+    width: 125%;
+  }
 }

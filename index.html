@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Безопасность веб-ресурсов</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.css"> 
   <link rel="stylesheet" href="/style/style.css">
   <style>
-    .ui.sidebar {
-      background: #f5f5f5;
-      padding: 20px;
+    .ui.vertical.menu{
+      position: sticky;
+      top: 80px;
     }
     .ui.footer {
       margin-top: 50px;
@@ -26,7 +26,7 @@
   </style>
 </head>
 <body>
-  <header>
+  <header class="header">
     <div class="ui top fixed menu">
       <div class="ui container">
         <a class="active item" href="index.html">Главная</a>
@@ -51,8 +51,8 @@
             <a class="item" href="best-practices.html">Лучшие практики</a>
             <a class="item" href="contact.html">Контакты</a>
           </div>
-          <div class="four wide column">
-              <img class="ui medium rounded image image-side" src="/img/poster.jpg">
+          <div class="sidebar-img">
+              <img class="ui medium rounded image image-side" src="/img/poster.jpg" >
           </div>
         </div>
 
@@ -239,7 +239,7 @@
           </section>        
           <div class="video-container">
             <h3>Видео: Введение в безопасность веб-ресурсов</h3>
-            <iframe width="720" height="405" src="https://rutube.ru/play/embed/fe9dda447501c216dd2e95d57ec6e406/" frameBorder="0" allow="clipboard-write" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+            <iframe width="720px" height="405" src="https://rutube.ru/play/embed/fe9dda447501c216dd2e95d57ec6e406/" frameBorder="0" allow="clipboard-write" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
           </div>
         </div>
       </div>
@@ -265,6 +265,6 @@
     </div>
   </footer>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.js"></script>
 </body>
 </html>

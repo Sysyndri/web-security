@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Методы защиты</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.css"> 
   <link rel="stylesheet" href="/style/style.css">
   <style>
-    .ui.sidebar {
-      background: #f5f5f5;
-      padding: 20px;
+    .ui.vertical.menu{
+      position: sticky;
+      top: 80px;
     }
     .ui.footer {
       margin-top: 50px;
@@ -55,8 +55,8 @@
             <a class="item" href="best-practices.html">Лучшие практики</a>
             <a class="item" href="contact.html">Контакты</a>
           </div>
-          <div class="four wide column">
-              <img class="ui medium rounded image image-side" src="/img/poster.jpg">
+          <div class="sidebar-img">
+            <img class="ui medium rounded image image-side" src="/img/poster.jpg" >
           </div>
         </div>
 
@@ -116,7 +116,7 @@
                         Вместо использования прямого запроса к таблице, можно использовать параметризованный:</p>
                     
                     <p class="text-p">
-                        <code class="code">
+                        <code class="code code-sql code-width ">
                             <span class="py-color-blue">cursor</span>.execute(<span class="py-color-green">"SELECT * FROM users WHERE user_id=?"</span>, (<span class="py-color-blue">user_id</span>,))
                         </code>
                     </p>
@@ -162,12 +162,12 @@
                         <b>Установка заголовков безопасности HTTP:</b> Бэкенд-сервер может установить заголовки безопасности HTTP, 
                         такие как Content-Security-Policy (CSP) [9] или X-XSS-Protection [10], которые помогают предотвратить XSS атаки на стороне клиента.
                         <p class="text-p">Пример заголовка CSP:</p>
-                        <code class="code">
+                        <code class="code code-sql code-width">
                             <span class="code-html-color">Content-Security-Policy</span><span class="py-color-blue">: default-src </span><span class="py-color-green">'self'</span>;<br>
                             <span class="code-html-color">script-src </span><span class="py-color-green">'self'</span> <span class="code-html-color">https://example</span><span class="code-html-doctype">.example.com</span>;
                         </code>
                         <p class="text-p">Пример заголовка X-XSS-Protection:</p>
-                        <code class="code">
+                        <code class="code code-width" >
                             <span class="code-html-color">X-XSS-Protection:</span> <span class="code-html-doctype">1</span>; <span class="code-html-color">mode=block</span>
                         </code>
                     </p>
@@ -283,11 +283,11 @@
   <footer>
     <div class="ui footer">
       <div class="ui container">
-        <p>&copy; 2023 Безопасность веб-ресурсов. Все права защищены.</p>
+        <p>&copy; 2025 Безопасность веб-ресурсов. Все права защищены.</p>
       </div>
     </div>
   </footer> 
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.js"></script>
 </body>
 </html>

@@ -4,11 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Инструменты</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
-  <style>
-    .ui.sidebar {
-      background: #f5f5f5;
-      padding: 20px;
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.css"> 
+  <link rel="stylesheet" href="/style/style.css">
+   <style>
+    .ui.vertical.menu{
+      position: sticky;
+      top: 80px;
     }
     .ui.footer {
       margin-top: 50px;
@@ -53,8 +54,8 @@
             <a class="item" href="best-practices.html">Лучшие практики</a>
             <a class="item" href="contact.html">Контакты</a>
           </div>
-          <div class="four wide column">
-              <img class="ui medium rounded image image-side" src="/img/poster.jpg">
+          <div class="sidebar-img">
+            <img class="ui medium rounded image image-side" src="/img/poster.jpg" >
           </div>
         </div>
 
@@ -91,21 +92,181 @@
             </tbody>
           </table>
 
-          <div class="video-container">
-            <h3>Видео: Как использовать OWASP ZAP</h3>
-            <iframe width="720" height="405" src="https://rutube.ru/play/embed/627df02ad5988209935155a0b667589f/" frameBorder="0" allow="clipboard-write" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>        </div>
-        </div>
-      </div>
-    </div>
+          <section class="owasp">
+            <h2 class="ui header"><ya-tr-span data-index="85-0" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="two header" data-translation="Второй заголовок" data-ch="0" 
+              data-type="trSpan" style="visibility: inherit !important;">OWASP ZAP</ya-tr-span></h2>
+            <p class="text-p"><b>OWASP ZAP</b> — сканер веб-приложений, <a href="https://www.zaproxy.org/blog/2020-05-15-dynamic-application-security-testing-with-zap-and-github-actions/">основанный на методике DAST</a> 
+              (Dynamic Application Security Testing). В русском варианте этот метод 
+              принято называть методом тестирования «черного ящика». Методика позволяет обнаруживать проблемы безопасности в работающем приложении или веб-сайте 
+              при помощи их сканирования на известные уязвимости. К таким уязвимостям можно отнести SQL-инъекции, межсайтовый скриптинг (XSS), Clickjacking и т.д.
+            </p>
+            <p class="text-p">OWASP ZAP разработан и поддерживается одноименным проектом под названием OWASP (Open Web Application Security Project) — 
+              некоммерческой организацией, которая специализируется на создании статей, материалов, документации, инструментов и технологий, позволяющих 
+              разрабатывать приложения безопаснее, а также обеспечивать должный уровень информационной безопасности уже созданных приложений и сайтов.
+            </p>
+            <p class="text-p">В качестве преимуществ OWASP ZAP можно выделить:</p>
+            <ul class="list owasp-list">
+              <li class="owasp-li">
+                <p class="text-p">
+                  Кроссплатформенность — поддержка всех основных ОС (Windows, Linux, MacOS);
+                </p>
+              </li>
+              <li class="owasp-li">
+                <p class="text-p">
+                  Бесплатный проект с <a href="https://github.com/zaproxy/zaproxy" class="link">с открытым исходным кодом</a>;
+                </p>
+              </li>
+              <li class="owasp-li">
+                <p class="text-p">
+                  Обширный набор функций — от активного/пассивного сканирования и до сканирования API и AJAX;
+                </p>
+              </li>
+              <li class="owasp-li">
+                <p class="text-p">
+                  Поддержка плагинов для расширения функциональности;
+                </p>
+              </li>
+              <li class="owasp-li">
+                <p class="text-p">
+                  Возможность работы как через графический интерфейс (GUI), так и через интерфейс командной строки;
+                </p>
+              </li>
+              <li class="owasp-li">
+                <p class="text-p">
+                  Простота использования. Идеально подходит и для начинающих специалистов в ИБ и для профессионалов.
+                </p>
+              </li>
+            </ul>
 
-    <div class="ui container" style="margin-top: 50px;">
-      <div class="ui pagination menu">
-        <a class="item" href="index.html">1</a>
-        <a class="item" href="threats.html">2</a>
-        <a class="item" href="protection.html">3</a>
-        <a class="active item" href="tools.html">4</a>
-        <a class="item" href="best-practices.html">5</a>
-        <a class="item" href="contact.html">6</a>
+          </section>
+          <section class="burp">
+            <h2 class="ui header"><ya-tr-span data-index="85-1" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="three header" data-translation="Третий заголовок" data-ch="0" 
+              data-type="trSpan" style="visibility: inherit !important;"></ya-tr-span>Burp Suite</h2>
+
+            <p class="text-p"><b>Burp Suite</b> – это мультитул для проведения аудита безопасности веб-приложений. Содержит 
+              инструменты для составления карты веб-приложения, поиска файлов и папок, модификации запросов, фаззинга, 
+              подбора паролей и многое другое. Также существует магазин дополнений BApp store, содержащий дополнительные расширения, 
+              увеличивающие функционал приложения. Стоит отметить и появление в последнем релизе мобильного помощника для исследования 
+              безопасности мобильных приложений — MobileAssistant для платформы iOS.
+            </p>
+            <p class="text-p"><b>Burp Suite</b> — это интегрированная платформа, предназначенная для проведения аудита веб-приложения, 
+              как в ручном, так и в автоматических режимах. Содержит интуитивно понятный интерфейс со специально спроектированными 
+              табами, позволяющими улучшить и ускорить процесс атаки. Сам инструмент представляет из себя проксирующий механизм, 
+              перехватывающий и обрабатывающий все поступающие от браузера запросы. Имеется возможность установки сертификата burp для анализа https соединений.
+            </p>
+            <p class="text-p">Некоторые преимущества Burp Suite:</p>
+            <ul class="list burp-list">
+              <li class="burp-li">
+                <p class="text-p">
+                  Полный контроль над запросами. Это полезно для ручного тестирования и анализа специфических уязвимостей.
+                </p>
+              </li>
+              <li class="burp-li">
+                <p class="text-p">
+                  Расширенная автоматизация. Возможность настраивать автоматические проверки и сканирование делает инструмент удобным для глубокого анализа больших приложений. 
+                </p>
+              </li>
+              <li class="burp-li">
+                <p class="text-p">
+                  Поддержка расширений. Burp имеет собственный BApp Store с множеством расширений, которые помогают добавлять новые функции.
+                </p>
+              </li>
+              <li class="burp-li">
+                <p class="text-p">
+                  Выявление уязвимостей, которые могут быть незаметны при автоматическом сканировании. Это достигается благодаря инструменту Burp Repeater,
+                   который позволяет тестировать приложение, отправляя пользовательские запросы и анализируя ответы.
+                </p>
+              </li>
+              <li class="burp-li">
+                <p class="text-p">
+                  Гибкая система замены передаваемых данных на лету. С её помощью можно модифицировать запросы, ответы, заголовки и тело, 
+                    а также блокировать соединения по определённым параметрам.
+                </p>
+              </li>
+            </ul>
+          </section>
+          <section class="nmap">
+            <h2 class="ui header"><ya-tr-span data-index="85-1" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="four header" data-translation="Четвертый заголовок" data-ch="0" 
+              data-type="trSpan" style="visibility: inherit !important;"></ya-tr-span>Nmap
+            </h2>
+            <p class="text-p">
+              <b>Nmap</b> — opensource утилита для сканирования сетей, является одним из самых популярных инструментов у безопасников и системных администраторов. В первую очередь используется для сканирования 
+              портов, но, кроме этого, имеет огромную массу полезных функций, что, по сути, делает Nmap <b>супер-комбайном</b> для исследования сетей.
+            </p>
+            <p class="text-p">
+              Помимо проверки открытых/закрытых портов Nmap может идентифицировать сервис, слушающий открытый порт, и его версию, а иногда помогает
+               определить ОС. В Nmap есть поддержка скриптов для сканирования (NSE — Nmap Scripting Engine). С использованием скриптов возможно 
+               проверить уязвимости для различных сервисов (если, конечно, для них есть скрипт, либо можно всегда написать свой) или побрутить пароли от различных сервисов.
+            </p>
+            <p class="text-p">
+              Таким образом, Nmap позволяет составить подробную карту сети, получить максимум информации о запущенных сервисах на хостах в сети, а также превентивно проверить некоторые уязвимости. 
+              Nmap также имеет гибкие настройки сканирования, возможна настройка скорости сканирования, количества потоков, количества групп для сканирования и т.д.
+            </p>
+            <p class="text-p">Некоторые преимущества</p>
+            <ul class="list nmap-list">
+              <li class="nmap-li">
+                <p class="text-p">
+                  Быстро работает с небольшим диапазоном хостов;
+                </p>
+              </li>
+              <li class="nmap-li">
+                <p class="text-p">
+                  Гибкость настроек — можно комбинировать опции таким образом, чтобы получить максимально информативные данные за приемлемое время;
+                </p>
+              </li>
+              <li class="nmap-li">
+                <p class="text-p">
+                  Параллельное сканирование — список целевых хостов разделяется на группы, а потом каждая группа поочередно сканируется, внутри 
+                  группы используется параллельное сканирование. Также разделение на группы является небольшим недостатком
+                </p>
+              </li>
+              <li class="nmap-li">
+                <p class="text-p">
+                  Предопределенные наборы скриптов для разных задач — можно не тратить много времени на подбор конкретных скриптов, а указать группы скриптов;
+                </p>
+              </li>
+              <li class="nmap-li">
+                <p class="text-p">
+                  Вывод результатов — 5 различных форматов, включая XML, который может быть импортирован в другие инструменты.
+                </p>
+              </li>
+            </ul>
+          </section>
+
+          <div class="accordion">
+            <div class="accordion-item">
+              <div class="accordion-header">Видео: Как использовать OWASP ZAP</div>
+              <div class="accordion-content">
+                <iframe width="720" height="405" src="https://rutube.ru/play/embed/627df02ad5988209935155a0b667589f/" frameBorder="0" allow="clipboard-write" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>  
+              </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <div class="accordion-header">Видео: Как использовать Burp Suite</div>
+              <div class="accordion-content">
+                <iframe width="720" height="405" src="https://rutube.ru/play/embed/213c451cf77fc358f18deb20b55e820b/" frameBorder="0" allow="clipboard-write;" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>   
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <div class="accordion-header">Видео: Как использовать Nmap</div>
+              <div class="accordion-content">
+                <iframe width="720" height="405" src="https://rutube.ru/play/embed/d87828fdab3ffc53f293031dc80e5147/" frameBorder="0" allow="clipboard-write;" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+              </div>
+            </div>
+          </div>
+      </div>
+      
+      <div class="ui container" style="margin-top: 50px;">
+        <div class="ui pagination menu">
+          <a class="item" href="index.html">1</a>
+          <a class="item" href="threats.html">2</a>
+          <a class="item" href="protection.html">3</a>
+          <a class="active item" href="tools.html">4</a>
+          <a class="item" href="best-practices.html">5</a>
+          <a class="item" href="contact.html">6</a>
+        </div>
       </div>
     </div>
   </main>
@@ -113,10 +274,21 @@
   <footer>
     <div class="ui footer">
       <div class="ui container">
-        <p>&copy; 2023 Безопасность веб-ресурсов. Все права защищены.</p>
+        <p>&copy; 2025 Безопасность веб-ресурсов. Все права защищены.</p>
       </div>
     </div>
   </footer>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.js"></script>
+  <script>
+    // Добавляем обработчик событий для открытия/закрытия секций
+    const accordionHeaders = document.querySelectorAll('.accordion-header');
+
+    accordionHeaders.forEach(header => {
+      header.addEventListener('click', () => {
+        const item = header.parentElement;
+        item.classList.toggle('active');
+      });
+    });
+  </script>
 </body>
 </html>
