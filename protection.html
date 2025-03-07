@@ -5,27 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Методы защиты</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.css"> 
-  <link rel="stylesheet" href="/style/style.css">
-  <style>
-    .ui.vertical.menu{
-      position: sticky;
-      top: 80px;
-    }
-    .ui.footer {
-      margin-top: 50px;
-      padding: 20px 0;
-      background: #1b1c1d;
-      color: white;
-      text-align: center;
-    }
-    .ui.table {
-      margin-top: 20px;
-    }
-    .video-container {
-      margin-top: 20px;
-      text-align: center;
-    }
-  </style>
+  <link rel="stylesheet" href="./style/style.css">
 </head>
 <body>
   <header>
@@ -56,7 +36,7 @@
             <a class="item" href="contact.html">Контакты</a>
           </div>
           <div class="sidebar-img">
-            <img class="ui medium rounded image image-side" src="/img/poster.jpg" >
+            <img alt="Место для вашей рекламы" class="ui medium rounded image image-side" src="./img/poster.jpg" >
           </div>
         </div>
 
@@ -158,19 +138,17 @@
                     </p>
                 </li>
                 <li class="xss-li">
-                    <p class="text-p">
-                        <b>Установка заголовков безопасности HTTP:</b> Бэкенд-сервер может установить заголовки безопасности HTTP, 
-                        такие как Content-Security-Policy (CSP) [9] или X-XSS-Protection [10], которые помогают предотвратить XSS атаки на стороне клиента.
-                        <p class="text-p">Пример заголовка CSP:</p>
-                        <code class="code code-sql code-width">
-                            <span class="code-html-color">Content-Security-Policy</span><span class="py-color-blue">: default-src </span><span class="py-color-green">'self'</span>;<br>
-                            <span class="code-html-color">script-src </span><span class="py-color-green">'self'</span> <span class="code-html-color">https://example</span><span class="code-html-doctype">.example.com</span>;
-                        </code>
-                        <p class="text-p">Пример заголовка X-XSS-Protection:</p>
-                        <code class="code code-width" >
-                            <span class="code-html-color">X-XSS-Protection:</span> <span class="code-html-doctype">1</span>; <span class="code-html-color">mode=block</span>
-                        </code>
-                    </p>
+                      <b>Установка заголовков безопасности HTTP:</b> Бэкенд-сервер может установить заголовки безопасности HTTP, 
+                      такие как Content-Security-Policy (CSP) [9] или X-XSS-Protection [10], которые помогают предотвратить XSS атаки на стороне клиента.
+                      <p class="text-p">Пример заголовка CSP:</p>
+                      <code class="code code-sql code-width">
+                          <span class="code-html-color">Content-Security-Policy</span><span class="py-color-blue">: default-src </span><span class="py-color-green">'self'</span>;<br>
+                          <span class="code-html-color">script-src </span><span class="py-color-green">'self'</span> <span class="code-html-color">https://example</span><span class="code-html-doctype">.example.com</span>;
+                      </code>
+                      <p class="text-p">Пример заголовка X-XSS-Protection:</p>
+                      <code class="code code-width" >
+                          <span class="code-html-color">X-XSS-Protection:</span> <span class="code-html-doctype">1</span>; <span class="code-html-color">mode=block</span>
+                      </code>
                 </li>
                 <li class="xss-li">
                     <p class="text-p">
@@ -184,7 +162,7 @@
                         необходимо использовать безопасные API и библиотеки, которые предотвращают внедрение вредоносного кода.
                     </p>
                 </li>
-            </uk>
+              </ul>
         </section>
       <section class="section csrf">
           <h2 class="title-h2">CSRF</h2>
@@ -263,7 +241,8 @@
 
           <div class="video-container">
             <h3>Видео: Как защитить веб-ресурсы</h3>
-            <iframe width="720" height="405" src="https://rutube.ru/play/embed/a3bba84f3cade5b8ddb66e4b717e43dc/" frameBorder="0" allow="clipboard-write" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>        </div>
+            <iframe width="720" height="405" src="https://rutube.ru/play/embed/a3bba84f3cade5b8ddb66e4b717e43dc/" allow="clipboard-write" allowFullScreen></iframe>        
+          </div>
         </div>
       </div>
     </div>
